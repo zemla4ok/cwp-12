@@ -25,6 +25,18 @@ module.exports = (Sequelize, config) => {
     const pizzas = Pizza(Sequelize, sequelize);
 
     //todo: creating relations between tables
+    turtles.belongsTo(pizzas, {
+        foreignKey: 'firstFavouritePizzaId', 
+        as: 'firstFavouritePizza'
+    });
+    turtles.belongsTo(pizzas, {
+        foreignKey: 'secondFavouritePizzaId',
+        as: 'secondFavouritePizza'
+    });
+    turtles.belongsTo(weapons, {
+        foreignKey: 'weaponId',
+        as: 'weapon'
+    })
 
     return{
         turtles,
