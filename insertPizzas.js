@@ -1,5 +1,4 @@
 module.exports = async function (db) {
-    await db.sequelize.sync({force: true});
     return Promise.all(
         [
             db.pizzas.create({
@@ -26,15 +25,11 @@ module.exports = async function (db) {
                 name: 'mushroom',
                 description: 'garlic sauce, ham, champignons, mozzarella, basil',
                 calories: 2300
-            }),
-            db.weapons.create({
-                name: 'swords',
-                dps: 99
-            })    
+            }) 
         ]
     )
     .then(() => {
-        console.log('insert pizzas completed');
+        console.log('insert pizzas completed');        
     })
     .catch((err) => {
         console.log(err);
