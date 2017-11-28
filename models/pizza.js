@@ -1,22 +1,21 @@
 module.exports = (Sequelize, sequelize) => {
     return sequelize.define('pizzas', {
-        //todo: description of fields
-        id: {
-            type: Sequelize.INTEGER,
-            autoIncrement: true,
-            primaryKey: true
+      id: {     
+          type: Sequelize.INTEGER,
+          autoIncrement: true,
+          primaryKey: true
         },
-        name: {
+      name: { 
             type: Sequelize.STRING(500),
             allowNull: false
         },
-        description: {
+      description: { 
             type: Sequelize.STRING(500),
             allowNull: false
         },
-        calories: {
+      calories: { 
             type: Sequelize.DOUBLE,
             allowNull: false
-        }
+        },
     });
-};
+  };

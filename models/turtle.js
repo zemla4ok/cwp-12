@@ -1,27 +1,26 @@
 module.exports = (Sequelize, sequelize) => {
     return sequelize.define('turtles', {
-        //todo: description of fields
-        id: {
+        id: {    
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        name: {
+       name: { 
             type: Sequelize.STRING(500),
             allowNull: false
         },
-        color: {
+      color: { 
             type: Sequelize.STRING(500),
             allowNull: false
         },
-        weaponId: {
-            type: Sequelize.INTEGER
+      weaponId: {
+          type: Sequelize.INTEGER
         },
-        firstFavouritePizzaId: {
-            type: Sequelize.INTEGER
+      firstFavouritePizzaId: {
+          type: Sequelize.INTEGER
         },
-        secondFavouritePizzaId: {
-            type: Sequelize.INTEGER
+      secondFavouritePizzaId: {
+          type: Sequelize.INTEGER
         }
     });
-};
+  };

@@ -30,46 +30,13 @@ module.exports = async function (db) {
             db.weapons.create({
                 name: 'swords',
                 dps: 99
-            }),
-            db.weapons.create({
-                name: 'pole',
-                dps: 75
-            }),
-            db.weapons.create({
-                name: 'nunchuck',
-                dps: 123
-            }),db.weapons.create({
-                name: 'sais',
-                dps: 101
-            }),
-            db.turtles.create({
-                name: 'Leonardo',
-                color: 'blue',
-                weaponId: 1,
-                firstFavouritePizzaId: 1,
-                secondFavouritePizzaId: 2 
-            }),
-            db.turtles.create({
-                name: 'Donatello',
-                color: 'purple',
-                weaponId: 2,
-                firstFavouritePizzaId: 2,
-                secondFavouritePizzaId: 3
-            }),
-            db.turtles.create({
-                name: 'Mickelangelo',
-                color: 'yellow',
-                weaponId: 3,
-                firstFavouritePizzaId: 3,
-                secondFavouritePizzaId: 4
-            }),
-            db.turtles.create({
-                name: 'Donatello',
-                color: 'red',
-                weaponId: 4,
-                firstFavouritePizzaId: 4,
-                secondFavouritePizzaId: 1
-            })
+            })    
         ]
     )
+    .then(() => {
+        console.log('insert pizzas completed');
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 }

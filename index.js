@@ -6,19 +6,34 @@ const db = require('./models')(Sequelize, config);
 Labka();
 
 async function Labka() {
-    await require('./inserts')(db);
-    console.log('asdas');
+    await require('./insertPizzas')(db);
+    await require('./insertWeapons')(db);
+    await require('./insertTurtles')(db);
 
     //1
     console.log('*****************1*****************');
+    console.log('All turtles');    
     let result = await db.turtles.findAll();
-    console.log('All turtles');
     result.forEach((val) => {
         console.log(val.name);
     });
     console.log();
 
     //2
-    console.log('*****************2*****************');
-    
+    /*console.log('*****************2*****************');
+    console.log('favourite pizza is hawaiian');
+     result = db.turtles.findAll({
+        where: {
+            '$firstFavouritePizza.name$': "hawaiian"
+        },
+        include: [
+            {
+                model: db.pizzas,
+                as: 'firstFavouritePizza'
+            }
+        ]
+     })
+     result.forEach((val) => {
+         console.log(val.name);
+     })*/
 }
