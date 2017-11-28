@@ -35,5 +35,35 @@ async function Labka() {
      })
      result.forEach((val) => {
          console.log(val.name);
+     });
+     console.log();
+
+    //3
+    console.log('*****************3*****************');
+    console.log('unique favourite pizzas')
+    result = await db.turtles.findAll({
+        group: 'firstFavouritePizzaId',
+        include: [{
+            model: db.pizzas,
+            as: 'firstfavouritePizza'
+        }]
+    });
+
+    console.log();
+
+    //7
+    console.log('*****************7*****************');
+    console.log('pizza with id=1');
+     result = await db.pizzas.findAll({
+         where: {
+             id: 1
+         }
      })
+    result.forEach((val) => {
+        console.log(val.name);
+    })
+    console.log();
+
+
+
 }
