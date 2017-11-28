@@ -45,10 +45,12 @@ async function Labka() {
         group: 'firstFavouritePizzaId',
         include: [{
             model: db.pizzas,
-            as: 'firstfavouritePizza'
+            as: 'firstFavouritePizza'
         }]
     });
-
+    result.forEach((val) => {
+        console.log(val.firstFavouritePizza.name);
+    })
     console.log();
 
     //7
